@@ -23,7 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/style.css",
+              "src/assets/vendor/swiper/css/swiper-bundle.min.css"
             ],
             "scripts": []
           },
