@@ -1,11 +1,11 @@
 <!-- <ng-container id="main-wrapper"> -->
 <!-- -->
 
-<div id="main-wrapper">
+<div id="main-wrapper" *ngIf="isMenuVisible">
 
-    <app-header></app-header> 
+    <app-header></app-header>
 
-    <app-menu></app-menu> 
+    <app-menu></app-menu>
 
     <router-outlet></router-outlet>
 
@@ -20,7 +20,12 @@
     <!--**********************************
         Footer end
     ***********************************-->
-    
+
+</div>
+
+<div id="main-wrapper" *ngIf="!isMenuVisible">
+
+    <router-outlet></router-outlet>
 </div>
 
 <!-- </ng-container> -->

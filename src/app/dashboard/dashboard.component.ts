@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
+
+    this.userService.getReservations().subscribe(
+      (response: any) => {
+        const res = response;
+        console.log('response', res);
+      }, (error: any) => {
+        console.log('error', error);
+
+      }
+    )
+
+    this.userService.getOrders().subscribe(
+      (response: any) => {
+        const res = response;
+        console.log('response', res);
+      }, (error: any) => {
+        console.log('error', error);
+
+      }
+    )
+
+    this.userService.getUsers().subscribe(
+      (response: any) => {
+        const res = response;
+        console.log('response', res);
+      }, (error: any) => {
+        console.log('error', error);
+
+      }
+    )
   }
 
 }
